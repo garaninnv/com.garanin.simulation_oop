@@ -1,7 +1,7 @@
-public class Rock extends Entity{
+public class Rock extends Entity {
 //    камень/ статичные объекты
 
-    public Rock () {
+    public Rock() {
         setName("Кам");
     }
 

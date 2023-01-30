@@ -1,7 +1,7 @@
-public class Grass extends Entity{
+public class Grass extends Entity {
 
-//    трава ресурс для травоядных.
-    public Grass (){
+    //    трава ресурс для травоядных.
+    public Grass() {
         setName("Тра");
     }
 

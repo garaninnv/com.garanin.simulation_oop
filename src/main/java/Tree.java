@@ -1,9 +1,10 @@
-public class Tree extends Entity{
+public class Tree extends Entity {
 //    дерево/статичные объекты
 
-    public Tree () {
+    public Tree() {
         setName("Дер");
     }
+
     @Override
     public String toString() {
         return getName();

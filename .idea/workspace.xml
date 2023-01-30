@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b89a970e-3bbb-4ffd-a333-6ffb4735cc3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Actions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Creature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Grass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Hervibore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MapDisplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Predator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Rock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Simulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Actions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Actions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hervibore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hervibore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MapDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MapDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Predator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Rock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,40 +84,42 @@
       <workItem from="1674741109647" duration="2263000" />
       <workItem from="1674754424844" duration="8880000" />
       <workItem from="1674844670101" duration="6379000" />
-      <workItem from="1674886746851" duration="32829000" />
+      <workItem from="1674886746851" duration="33969000" />
+      <workItem from="1675077201646" duration="162000" />
+      <workItem from="1675093091623" duration="14941000" />
     </task>
+    <task id="LOCAL-00001" summary="#1">
+      <created>1675026270282</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675026270282</updated>
+    </task>
+    <task id="LOCAL-00002" summary="#1.1">
+      <created>1675026362674</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675026362674</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="#1" />
+    <MESSAGE value="#1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="#1.1" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Actions.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Predator.java</url>
-          <line>250</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Predator.java</url>
-          <line>137</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Predator.java</url>
-          <line>248</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Predator.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="21" />
+          <line>95</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
