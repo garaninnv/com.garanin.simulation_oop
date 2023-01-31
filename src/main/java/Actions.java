@@ -2,31 +2,32 @@ import java.util.LinkedHashMap;
 import java.util.Random;
 
 public class Actions {
+    private int moveCounter = 1;
 
-    public static void initMap(LinkedHashMap<Cell, Entity> map, int maxX, int maxY) {
-        for (int i = 0; i < maxY; i++) {
-            for (int j = 0; j < maxX; j++) {
-                map.put(new Cell(i, j), null);
+    public void initMap(LinkedHashMap<Cell, Entity> map, int maxX, int maxY) {
+        for (int x = 0; x < maxY; x++) {
+            for (int y = 0; y < maxX; y++) {
+                map.put(new Cell(x, y), null);
             }
         }
     }
 
-    //действия, совершаемые перед стартом симуляции. Пример - расставить объекты и существ на карте
+    //Действия, совершаемые перед стартом симуляции. Пример - расставить объекты и существ на карте
     //рандомная инициализация хищника, двух животных, камней, деревьев, травы.
-    public static void initActions(LinkedHashMap<Cell, Entity> map) {
-        map.put(randomCell(map), new Predator(5, 2, 4));
-        map.put(randomCell(map), new Hervibore(5, 5));
-        map.put(randomCell(map), new Hervibore(3, 4));
-        map.put(randomCell(map), new Rock());
-        map.put(randomCell(map), new Tree());
-        map.put(randomCell(map), new Grass());
-        map.put(randomCell(map), new Grass());
-        map.put(randomCell(map), new Grass());
-        MapDisplayer.showMap(map);
+    public void initActions(LinkedHashMap<Cell, Entity> map) {
+        map.put(createObjectsForGame(map), new Predator(2, 4));
+        map.put(createObjectsForGame(map), new Hervibore(5, 5));
+        map.put(createObjectsForGame(map), new Hervibore(3, 4));
+        map.put(createObjectsForGame(map), new Rock());
+        map.put(createObjectsForGame(map), new Tree());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
     }
 
     // запуск функции для выполнения хода всех существ в порядке очереди.
-    public static void turnActions(LinkedHashMap<Cell, Entity> map) {
+    public void turnActions(LinkedHashMap<Cell, Entity> map) {
         for (Cell key : map.keySet()) {
             if (map.get(key) != null) {
                 if (map.get(key).getClass().equals(Predator.class)) {
@@ -34,16 +35,18 @@ public class Actions {
                     System.out.println("Хищник делает ход");
                     MapDisplayer.showMap(map);
                 } else if (map.get(key).getClass().equals(Hervibore.class)) {
-//                    ((Hervibore) map.get(key)).makeMove(map, key);
-//                    System.out.println("Травоядное делает ход");
-//                    MapDisplayer.showMap(map);
+                    ((Hervibore) map.get(key)).makeMove(map, key);
+                    System.out.println("Травоядное делает ход");
+                    MapDisplayer.showMap(map);
                 }
             }
         }
-        System.out.println("ходы выполнены");
+        System.out.println("Ход №" + this.moveCounter + " выполнен");
+        this.moveCounter++;
     }
 
-    public static Cell randomCell(LinkedHashMap<Cell, Entity> map) {
+    // Реализация рандомного расположение игровых объектов
+    private static Cell createObjectsForGame(LinkedHashMap<Cell, Entity> map) {
         int maxEl = map.keySet().size();
         int iEl = new Random().nextInt(maxEl);
         int iter = 0;
@@ -52,7 +55,7 @@ public class Actions {
                 if (map.get(el) == null) {
                     return el;
                 } else {
-                    randomCell(map);
+                    createObjectsForGame(map);
                 }
             } else {
                 iter++;

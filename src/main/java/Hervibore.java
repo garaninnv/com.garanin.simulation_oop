@@ -7,38 +7,53 @@ public class Hervibore extends Creature {
         setSpeed(speed);
         setHp(hp);
     }
+    @Override
+    public String toString() {
+        return "Hervibore{" +
+                "hp=" + getHp() +
+                "name=" + getName() +
+                '}';
+    }
 
-    //Cтремятся найти ресурс (траву), может потратить свой ход на движение в сторону травы, либо на её поглощение
-    //Если значение HP жертвы опускается до 0, травоядное исчезает
     @Override
     public void makeMove(LinkedHashMap<Cell, Entity> map, Cell cell) {
-        //очередь с точками по мере их обнаружения
-        Queue<Cell> queue = new LinkedList<>();
+        //очередь с клетками по мере их обнаружения
+        Queue<Cell> lineOfCells = new LinkedList<>();
 
-        //посещенные точки
-        Queue<Cell> visitedNodes = new LinkedList<>();
+        //посещенные клетки
+        List<Cell> visitedCells = new LinkedList<>();
 
         //список родителей вершин
         LinkedHashMap<Cell, Cell> parents = new LinkedHashMap<>();
-        Set<Cell> cellSet = map.keySet();
-        //расчетная длина хода до объекта охоты.
-        int len;
 
-        queue.add(cell);
+        //Список всех ключей из мап (карты)
+        Set<Cell> cellKeySet = map.keySet();
+
+        // длина хода до объекта охоты.
+        int destinationCellIndex;
+
+        // флаг для досрочного выхода из циклов
         boolean flagExit = false;
-        while (!queue.isEmpty()) {
 
-            Cell serchCell = queue.poll();
-            visitedNodes.add(serchCell);
+        // в очередь помещаем первую ячейку и начинаем обходить всю очередь ячеек.
+        lineOfCells.add(cell);
+        while (!lineOfCells.isEmpty()) {
+
+            Cell cellFromQueue = lineOfCells.poll();
+            visitedCells.add(cellFromQueue);
             Cell cellHervibore = null;
-            int x = serchCell.getX();
-            int y = serchCell.getY();
+            int x = cellFromQueue.getX();
+            int y = cellFromQueue.getY();
 
-            for (Cell el : cellSet) {
-                if (!visitedNodes.contains(el) && !queue.contains(el)) {
+            // анализируем ячейки сверху/снизу/с лева/с права
+            // если ячейка пустая, то добавляем её в очередь, если в ячейке Трава, то добавляем её в очередь и
+            // заканчиваем цикл поиска
+            // Иные ячейки не анализируются (камни, деревья, хищники, иные травоядные)
+            for (Cell el : cellKeySet) {
+                if (!visitedCells.contains(el) && !lineOfCells.contains(el)) {
                     if (x - 1 >= 0) {
-                        if (el.getX() == x - 1 && serchCell.getY() == el.getY()) {
-                            flagExit = this.queuing(map, el, queue, parents, serchCell);
+                        if (el.getX() == x - 1 && cellFromQueue.getY() == el.getY()) {
+                            flagExit = addCellsToQueue(map, el, lineOfCells, parents, cellFromQueue);
                             if (flagExit) {
                                 break;
                             }
@@ -46,8 +61,8 @@ public class Hervibore extends Creature {
                         }
                     }
                     if (x + 1 <= 4) {
-                        if (el.getX() == x + 1 && serchCell.getY() == el.getY()) {
-                            flagExit = this.queuing(map, el, queue, parents, serchCell);
+                        if (el.getX() == x + 1 && cellFromQueue.getY() == el.getY()) {
+                            flagExit = addCellsToQueue(map, el, lineOfCells, parents, cellFromQueue);
                             if (flagExit) {
                                 break;
                             }
@@ -55,8 +70,8 @@ public class Hervibore extends Creature {
                         }
                     }
                     if (y - 1 >= 0) {
-                        if (serchCell.getX() == el.getX() && el.getY() == y - 1) {
-                            flagExit = this.queuing(map, el, queue, parents, serchCell);
+                        if (cellFromQueue.getX() == el.getX() && el.getY() == y - 1) {
+                            flagExit = addCellsToQueue(map, el, lineOfCells, parents, cellFromQueue);
                             if (flagExit) {
                                 break;
                             }
@@ -64,8 +79,8 @@ public class Hervibore extends Creature {
                         }
                     }
                     if (y + 1 <= 4) {
-                        if (serchCell.getX() == el.getX() && el.getY() == y + 1) {
-                            flagExit = this.queuing(map, el, queue, parents, serchCell);
+                        if (cellFromQueue.getX() == el.getX() && el.getY() == y + 1) {
+                            flagExit = addCellsToQueue(map, el, lineOfCells, parents, cellFromQueue);
                             if (flagExit) {
                                 break;
                             }
@@ -76,60 +91,55 @@ public class Hervibore extends Creature {
             }
 
             if (flagExit) {
+                //Список для формирования кратчайшего пути к траве
                 List<Cell> path = new ArrayList<>();
+                //ищем ключ (позицию клетки) к которой необходимо прийти
                 for (Map.Entry<Cell, Cell> entry : parents.entrySet()) {
-                    if (serchCell.equals(entry.getValue()) && map.get(entry.getKey()) != null) {
+                    if (cellFromQueue.equals(entry.getValue()) && map.get(entry.getKey()) != null) {
                         cellHervibore = entry.getKey();
                         path.add(cellHervibore);
                         break;
                     }
                 }
-
-                while (!cell.equals(serchCell)) {
-
+                //формируем кратчайший путь к точке назначения
+                while (!cell.equals(cellFromQueue)) {
                     path.add(parents.get(cellHervibore));
-                    serchCell = parents.get(cellHervibore);
-                    cellHervibore = serchCell;
+                    cellFromQueue = parents.get(cellHervibore);
+                    cellHervibore = cellFromQueue;
                 }
-
-                len = path.size() - getSpeed();
-                if (len < 0) {
-                    len = 0;
+                //определяем индекс клетки в списке кратчайшего пути в зависимости от скорости травоядного
+                //если скорости не хватает дойти до цели, животное просто пытается приблизиться.
+                destinationCellIndex = path.size() - getSpeed();
+                if (destinationCellIndex < 0) {
+                    destinationCellIndex = 0;
                 }
 
                 if (path.size() == 1) {
-                    map.put(path.get(len), map.get(serchCell));
-                    map.put(serchCell, null);
+                    map.put(path.get(destinationCellIndex), map.get(cellFromQueue));
+                    map.put(cellFromQueue, null);
 
                 } else {
-                    map.put(path.get(len), map.get(path.get(path.size() - 1)));
+                    map.put(path.get(destinationCellIndex), map.get(path.get(path.size() - 1)));
                     map.put(path.get(path.size() - 1), null);
                 }
+                //после поедания травы HP увеличивается на +1
                 setHp(getHp() + 1);
                 break;
             }
         }
     }
 
-    public boolean queuing(LinkedHashMap<Cell, Entity> map, Cell el, Queue<Cell> queue
-            , LinkedHashMap<Cell, Cell> parents, Cell serchCell) {
+    private boolean addCellsToQueue(LinkedHashMap<Cell, Entity> map, Cell el, Queue<Cell> lineOfCells
+            , LinkedHashMap<Cell, Cell> parents, Cell cellBufer) {
         boolean flagExit = false;
         if (map.get(el) == null) {
-            queue.add(el);
-            parents.put(el, serchCell);
+            lineOfCells.add(el);
+            parents.put(el, cellBufer);
         } else if (map.get(el).getClass() == Grass.class) {
-            queue.add(el);
-            parents.put(el, serchCell);
+            lineOfCells.add(el);
+            parents.put(el, cellBufer);
             flagExit = true;
         }
         return flagExit;
-    }
-
-    @Override
-    public String toString() {
-        return "Hervibore{" +
-                "hp=" + getHp() +
-                "name=" + getName() +
-                '}';
     }
 }

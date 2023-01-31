@@ -3,48 +3,53 @@ import java.util.Set;
 
 public class MapDisplayer {
 
+    //отрисовка игрового поля с героями
     public static void showMap(LinkedHashMap<Cell, Entity> map) {
         Set<Cell> cellSet = map.keySet();
-        int index = 4;
-        int count = 0;
-        int lineX = 0;
-        int i;
+        //размерность поля fieldSize X fieldSize
+        int fieldSize = 4;
+        //счетчик столбцов
+        int columnCount;
+
+        int lineCounter = 0;
+        int lineNumber;
         System.out.print("   |");
-        for (i = 0; i <= index; i++) {
-            System.out.print("Y" + i + " |");
-            if (i == index) {
+        for (columnCount = 0; columnCount <= fieldSize; columnCount++) {
+            System.out.print("Y" + columnCount + " |");
+            if (columnCount == fieldSize) {
                 System.out.println();
             }
         }
-        i = 0;
-        System.out.print("X" + i + " |");
+        lineNumber = 0;
+        columnCount = 0;
+        System.out.print("X" + lineNumber + " |");
         for (Cell key : cellSet) {
-            if (lineX == 5) {
-                lineX = 0;
-                i++;
-                System.out.print("X" + i + " |");
+            if (lineCounter == 5) {
+                lineCounter = 0;
+                lineNumber++;
+                System.out.print("X" + lineNumber + " |");
             }
 
             if (map.get(key) == null) {
-                if (index == count) {
+                if (fieldSize == columnCount) {
                     System.out.println("   |");
-                    count = 0;
+                    columnCount = 0;
                 } else {
                     System.out.print("   |");
-                    count++;
+                    columnCount++;
                 }
             } else {
-                if (index == count) {
+                if (fieldSize == columnCount) {
                     System.out.println(map.get(key).getName() + "|");
-                    count = 0;
+                    columnCount = 0;
                 } else {
                     System.out.print(map.get(key).getName() + "|");
-                    count++;
+                    columnCount++;
                 }
             }
-            lineX++;
+            lineCounter++;
         }
-        System.out.println("____________________");
+        System.out.println("_______________________________________");
     }
 
 }
