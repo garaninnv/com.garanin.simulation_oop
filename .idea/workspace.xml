@@ -81,7 +81,7 @@
       <workItem from="1675143305967" duration="4357000" />
       <workItem from="1675170657234" duration="18860000" />
       <workItem from="1675365268768" duration="4553000" />
-      <workItem from="1675450360977" duration="10554000" />
+      <workItem from="1675450360977" duration="10692000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1675026270282</created>
@@ -118,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675579054273</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1. Создан бесконечный цикл с автоматической регенерацией новых объектов на карте&#10;2. Переписана функция рандомной расстановки объектов на карте.">
+      <created>1675580642709</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675580642709</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

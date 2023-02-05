@@ -34,12 +34,12 @@ public class Actions {
                     ((Predator) map.get(key)).makeMove(map, key);
                     System.out.println("Хищник " + key + " делает ход");
                     MapDisplayer.showMap(map);
-                    //Thread.sleep(1000);
+                    Thread.sleep(1000);
                 } else if (map.get(key).getClass().equals(Hervibore.class)) {
                     ((Hervibore) map.get(key)).makeMove(map, key);
                     System.out.println("Травоядное " + key + " делает ход");
                     MapDisplayer.showMap(map);
-                    //Thread.sleep(1000);
+                    Thread.sleep(1000);
                 }
             }
         }

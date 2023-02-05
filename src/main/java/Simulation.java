@@ -19,8 +19,8 @@ public class Simulation {
             System.out.println("============Меню симуляции============");
             System.out.println("1 - Симулировать игровой Мир сделать один ход");
             System.out.println("2 - Запустить бесконечную симуляцию игрового Мира ");
-            System.out.println("3 - Приостановить бесконечную симуляцию игрового Мира");
-            System.out.println("4 - Продолжить игру в бесконечном цикле");
+            System.out.println("3 - (не реализовано) Приостановить бесконечную симуляцию игрового Мира");
+            System.out.println("4 - (не реализовано) Продолжить игру в бесконечном цикле");
             System.out.println("5 - Начать игру с начала");
             System.out.println("0 - Конец  Игры");
             System.out.println("=======================================");
@@ -36,7 +36,6 @@ public class Simulation {
             } else if (idMenu == 2) {
                 //пока на карте есть травоядные имеется смысл жизни в игровом Мире
                     while (areHervibore(map, actions)) {
-
                         try {
                             actions.turnActions(map);
                         } catch (InterruptedException e) {
