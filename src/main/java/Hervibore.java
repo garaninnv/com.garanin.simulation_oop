@@ -10,8 +10,9 @@ public class Hervibore extends Creature {
     @Override
     public String toString() {
         return "Hervibore{" +
-                "hp=" + getHp() +
-                "name=" + getName() +
+                "name = " + getName() +
+                "; hp = " + getHp() +
+                "; speed = " + getSpeed() +
                 '}';
     }
 
@@ -60,7 +61,7 @@ public class Hervibore extends Creature {
                             ;
                         }
                     }
-                    if (x + 1 <= 4) {
+                    if (x + 1 <= 9) {
                         if (el.getX() == x + 1 && cellFromQueue.getY() == el.getY()) {
                             flagExit = addCellsToQueue(map, el, lineOfCells, parents, cellFromQueue);
                             if (flagExit) {
@@ -78,7 +79,7 @@ public class Hervibore extends Creature {
                             ;
                         }
                     }
-                    if (y + 1 <= 4) {
+                    if (y + 1 <= 9) {
                         if (cellFromQueue.getX() == el.getX() && el.getY() == y + 1) {
                             flagExit = addCellsToQueue(map, el, lineOfCells, parents, cellFromQueue);
                             if (flagExit) {

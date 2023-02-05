@@ -1,4 +1,5 @@
 import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class MapDisplayer {
@@ -7,7 +8,7 @@ public class MapDisplayer {
     public static void showMap(LinkedHashMap<Cell, Entity> map) {
         Set<Cell> cellSet = map.keySet();
         //размерность поля fieldSize X fieldSize
-        int fieldSize = 4;
+        int fieldSize = 9;
         //счетчик столбцов
         int columnCount;
 
@@ -24,7 +25,7 @@ public class MapDisplayer {
         columnCount = 0;
         System.out.print("X" + lineNumber + " |");
         for (Cell key : cellSet) {
-            if (lineCounter == 5) {
+            if (lineCounter == 10) {
                 lineCounter = 0;
                 lineNumber++;
                 System.out.print("X" + lineNumber + " |");
@@ -50,6 +51,13 @@ public class MapDisplayer {
             lineCounter++;
         }
         System.out.println("_______________________________________");
+        for (Map.Entry<Cell, Entity> entry : map.entrySet()) {
+            if (entry.getValue() != null) {
+                if (entry.getValue().getClass() == Predator.class || entry.getValue().getClass() == Hervibore.class) {
+                    System.out.println(entry.getKey() +" - "+ entry.getValue());
+                }
+            }
+        }
     }
 
 }

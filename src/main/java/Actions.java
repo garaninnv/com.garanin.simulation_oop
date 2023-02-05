@@ -1,5 +1,4 @@
-import java.util.LinkedHashMap;
-import java.util.Random;
+import java.util.*;
 
 public class Actions {
     private int moveCounter = 1;
@@ -16,6 +15,7 @@ public class Actions {
     //рандомная инициализация хищника, двух животных, камней, деревьев, травы.
     public void initActions(LinkedHashMap<Cell, Entity> map) {
         map.put(createObjectsForGame(map), new Predator(2, 4));
+        map.put(createObjectsForGame(map), new Predator(5, 2));
         map.put(createObjectsForGame(map), new Hervibore(5, 5));
         map.put(createObjectsForGame(map), new Hervibore(3, 4));
         map.put(createObjectsForGame(map), new Rock());
@@ -27,17 +27,19 @@ public class Actions {
     }
 
     // запуск функции для выполнения хода всех существ в порядке очереди.
-    public void turnActions(LinkedHashMap<Cell, Entity> map) {
+    public void turnActions(LinkedHashMap<Cell, Entity> map) throws InterruptedException {
         for (Cell key : map.keySet()) {
             if (map.get(key) != null) {
                 if (map.get(key).getClass().equals(Predator.class)) {
                     ((Predator) map.get(key)).makeMove(map, key);
-                    System.out.println("Хищник делает ход");
+                    System.out.println("Хищник " + key + " делает ход");
                     MapDisplayer.showMap(map);
+                    Thread.sleep(1000);
                 } else if (map.get(key).getClass().equals(Hervibore.class)) {
                     ((Hervibore) map.get(key)).makeMove(map, key);
-                    System.out.println("Травоядное делает ход");
+                    System.out.println("Травоядное " + key + " делает ход");
                     MapDisplayer.showMap(map);
+                    Thread.sleep(1000);
                 }
             }
         }
@@ -47,20 +49,30 @@ public class Actions {
 
     // Реализация рандомного расположение игровых объектов
     private static Cell createObjectsForGame(LinkedHashMap<Cell, Entity> map) {
-        int maxEl = map.keySet().size();
-        int iEl = new Random().nextInt(maxEl);
-        int iter = 0;
+        List<Cell> cells = new ArrayList<>();
         for (Cell el : map.keySet()) {
-            if (iEl == iter) {
-                if (map.get(el) == null) {
-                    return el;
-                } else {
-                    createObjectsForGame(map);
-                }
-            } else {
-                iter++;
+            if (map.get(el) == null) {
+                cells.add(el);
             }
         }
-        return null;
+        return cells.get(new Random().nextInt(cells.size()));
+    }
+    public void addHerviboreAndGrass(LinkedHashMap<Cell, Entity> map) {
+        map.put(createObjectsForGame(map), new Hervibore(6, 2));
+        map.put(createObjectsForGame(map), new Hervibore(2, 6));
+        map.put(createObjectsForGame(map), new Hervibore(3, 4));
+        map.put(createObjectsForGame(map), new Hervibore(1, 9));
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
+        map.put(createObjectsForGame(map), new Grass());
     }
 }
