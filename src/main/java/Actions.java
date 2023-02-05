@@ -49,9 +49,6 @@ public class Actions {
 
     // Реализация рандомного расположение игровых объектов
     private static Cell createObjectsForGame(LinkedHashMap<Cell, Entity> map) {
-        int maxEl = map.keySet().size();
-        int iEl = new Random().nextInt(maxEl);
-        int iter = 0;
         List<Cell> cells = new ArrayList<>();
         for (Cell el : map.keySet()) {
             if (map.get(el) == null) {
