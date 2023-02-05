@@ -84,7 +84,9 @@
       <workItem from="1675077201646" duration="162000" />
       <workItem from="1675093091623" duration="15553000" />
       <workItem from="1675143305967" duration="4357000" />
-      <workItem from="1675170657234" duration="11168000" />
+      <workItem from="1675170657234" duration="18860000" />
+      <workItem from="1675365268768" duration="4553000" />
+      <workItem from="1675450360977" duration="9738000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1675026270282</created>
@@ -107,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675116102828</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1. Скорректировал наименования методов, полей и переменных.&#10;2. Написал меню программы&#10;3. Добавил комментарии в классах">
+      <created>1675186297077</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675186297077</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,9 +126,23 @@
     <MESSAGE value="#1" />
     <MESSAGE value="#1.1" />
     <MESSAGE value="- доделал поиск пути для хищника и травоядного&#10;- проверил все варианты событий." />
-    <option name="LAST_COMMIT_MESSAGE" value="- доделал поиск пути для хищника и травоядного&#10;- проверил все варианты событий." />
+    <MESSAGE value="1. Скорректировал наименования методов, полей и переменных.&#10;2. Написал меню программы&#10;3. Добавил комментарии в классах" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Скорректировал наименования методов, полей и переменных.&#10;2. Написал меню программы&#10;3. Добавил комментарии в классах" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="12" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.LinkedHashMap$Entry" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="distances.entrySet().toArray()[5]" />
