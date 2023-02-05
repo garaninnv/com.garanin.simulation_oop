@@ -36,6 +36,7 @@ public class Simulation {
             } else if (idMenu == 2) {
                 //пока на карте есть травоядные имеется смысл жизни в игровом Мире
                     while (areHervibore(map, actions)) {
+
                         try {
                             actions.turnActions(map);
                         } catch (InterruptedException e) {
@@ -61,7 +62,6 @@ public class Simulation {
         }
         if (!fl) {
             actions.addHerviboreAndGrass(map);
-            fl = false;
         }
         return true;
     }

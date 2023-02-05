@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b89a970e-3bbb-4ffd-a333-6ffb4735cc3f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Actions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Actions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hervibore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hervibore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MapDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MapDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Predator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Simulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +81,7 @@
       <workItem from="1675143305967" duration="4357000" />
       <workItem from="1675170657234" duration="18860000" />
       <workItem from="1675365268768" duration="4553000" />
-      <workItem from="1675450360977" duration="9738000" />
+      <workItem from="1675450360977" duration="10554000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1675026270282</created>
@@ -116,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675186297077</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1. Создан бесконечный цикл с автоматической регенерацией новых объектов на карте&#10;2. Переписана функция рандомной расстановки объектов на карте.">
+      <created>1675579054273</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675579054273</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +129,8 @@
     <MESSAGE value="#1.1" />
     <MESSAGE value="- доделал поиск пути для хищника и травоядного&#10;- проверил все варианты событий." />
     <MESSAGE value="1. Скорректировал наименования методов, полей и переменных.&#10;2. Написал меню программы&#10;3. Добавил комментарии в классах" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Скорректировал наименования методов, полей и переменных.&#10;2. Написал меню программы&#10;3. Добавил комментарии в классах" />
+    <MESSAGE value="1. Создан бесконечный цикл с автоматической регенерацией новых объектов на карте&#10;2. Переписана функция рандомной расстановки объектов на карте." />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Создан бесконечный цикл с автоматической регенерацией новых объектов на карте&#10;2. Переписана функция рандомной расстановки объектов на карте." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
