@@ -5,7 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b89a970e-3bbb-4ffd-a333-6ffb4735cc3f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Simulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Actions/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Actions/EntityGenerateAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Actions/GrassEntityGenerateAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Actions/HerviboreEntityGenerateAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Actions/MoveCreaturesAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Actions/PredatorEntityGenerateAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Actions/RockEntityGenerateAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Actions/TreeEntityGenerateAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Creature/Hervibore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/Creature/Predator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/MapClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/simulation/MapDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Actions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Creature/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Creature/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Creature/Grass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hervibore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MapDisplayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Predator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Creature/Rock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Creature/Tree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +44,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -44,9 +72,14 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Simulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Simulation" />
+      <option name="MAIN_CLASS_NAME" value="simulation.Simulation" />
       <module name="com.garanin.simulation_oop" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,6 +115,18 @@
       <workItem from="1675170657234" duration="18860000" />
       <workItem from="1675365268768" duration="4553000" />
       <workItem from="1675450360977" duration="10692000" />
+      <workItem from="1675581170565" duration="750000" />
+      <workItem from="1675630681571" duration="599000" />
+      <workItem from="1675711750933" duration="734000" />
+      <workItem from="1677264571845" duration="990000" />
+      <workItem from="1677413610125" duration="12444000" />
+      <workItem from="1677441262435" duration="599000" />
+      <workItem from="1677599674020" duration="7354000" />
+      <workItem from="1677679270099" duration="11296000" />
+      <workItem from="1677739694784" duration="5776000" />
+      <workItem from="1677773264484" duration="8923000" />
+      <workItem from="1677820532638" duration="1617000" />
+      <workItem from="1677858980147" duration="28908000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1675026270282</created>
@@ -125,7 +170,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675580642709</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1. Создан бесконечный цикл с автоматической регенерацией новых объектов на карте&#10;2. Переписана функция рандомной расстановки объектов на карте.">
+      <created>1675581227425</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675581227425</updated>
+    </task>
+    <task id="LOCAL-00008" summary="1. Создан бесконечный цикл с автоматической регенерацией новых объектов на карте&#10;2. Переписана функция рандомной расстановки объектов на карте.">
+      <created>1675581307288</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675581307288</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

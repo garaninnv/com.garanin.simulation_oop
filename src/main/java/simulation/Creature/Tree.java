@@ -1,6 +1,6 @@
-public class Tree extends Entity {
-//    дерево/статичные объекты
+package simulation.Creature;
 
+public class Tree extends Entity {
     public Tree() {
         setName("Дер");
     }

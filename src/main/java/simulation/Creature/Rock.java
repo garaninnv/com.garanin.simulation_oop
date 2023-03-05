@@ -1,6 +1,6 @@
-public class Rock extends Entity {
-//    камень/ статичные объекты
+package simulation.Creature;
 
+public class Rock extends Entity {
     public Rock() {
         setName("Кам");
     }
