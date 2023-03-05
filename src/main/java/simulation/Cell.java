@@ -1,3 +1,5 @@
+package simulation;
+
 import java.util.Objects;
 
 public class Cell {

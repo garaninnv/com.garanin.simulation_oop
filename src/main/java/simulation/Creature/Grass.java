@@ -1,6 +1,6 @@
-public class Grass extends Entity {
+package simulation.Creature;
 
-    //    трава ресурс для травоядных.
+public class Grass extends Entity {
     public Grass() {
         setName("Тра");
     }
